@@ -1,3 +1,3 @@
 # Data-scientist
 
-Projet réalisé en collaboration avec Ugo Gessa, Ainsi que Thomas Hertzog, et moi même Mathieu Donier
+Projet réalisé en collaboration avec @BrokenPirate , Ainsi que @mxrch, et moi même Mathieu Donier
