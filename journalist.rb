@@ -41,9 +41,9 @@ def handleWithUpcase(handle)#Méthode qui va compter le nb de pseudo avec une le
   handle.each do |user|
     number = 0
     count = 0
-    user.split("").each do |char|
+    user.split("").each do |char|#Check chaque caractère de chaque élément de l'array 
       if count != 0
-        if char == char.upcase && ((char >= "A" && char <= "Z") || (char >= "a" && char <= "z"))
+        if char == char.upcase && ((char >= "A" && char <= "Z") || (char >= "a" && char <= "z"))#Si le char est une majuscule entre A et Z ou a et z
           number = 1
         end
       end
@@ -68,10 +68,36 @@ def underscoreInHandle(handle)#Méthode qui va compter le nb de pseudo avec un u
   return nbUnderscore#On affecte le la valeur de nbUnderlineHandle à la méthode underlineHandle
 end
 
-p "La liste contient le pseudo de  #{handle.length} journalistes"
+p "------------------------------------------------------------------------------------------------------------"
+p "Le array nonné \"handle\" contient le pseudo de  #{handle.length} journalistes"
+p "------------------------------------------------------------------------------------------------------------"
 p "Il y a  #{countHandleWithNumber(handle)} journalistes qui on un chiffre/nombre dans leurs pseudo"
-p "La liste contient #{audeHandle(handle)} personne avec les lettre \"Aude\" dans leurs pseudo "
-p "Dans la liste il y a  #{upcaseHandle(handle)} personnes avec une majuscle à la première lettre de leurs dans leurs pseudo"
-p "Dans la liste il y a  un total #{handleWithUpcase(handle)} de personnes avec une ou plusieurs majuscule dans leurs pseudo"
-p "Dans la liste il y a  #{underscoreInHandle(handle)} personnes avec un underscore ('_') dans leurs pseudo"
-puts handle.sort_by{|word|word.downcase}
+p "------------------------------------------------------------------------------------------------------------"
+p "La liste contient #{audeHandle(handle)} journalistes avec les lettre \"aude\" dans leurs pseudo "
+p "------------------------------------------------------------------------------------------------------------"
+p "Dans le array il y a #{upcaseHandle(handle)} journalistes avec une majuscle à la première lettre de leurs dans leurs pseudo"
+p "------------------------------------------------------------------------------------------------------------"
+p "Dans le array il y a  un total #{handleWithUpcase(handle)} de journalistes avec une ou plusieurs majuscule dans leurs pseudo"
+p "------------------------------------------------------------------------------------------------------------"
+p "Dans le array il y a #{underscoreInHandle(handle)} journalistes avec un underscore ('_') dans leurs pseudo"
+p "------------------------------------------------------------------------------------------------------------"
+p "Voulez vous  maintenant afficher l'array classé dans l'ordre l'aphabétique ? (Y/N)"
+
+userAnswer = gets.chomp.upcase
+if userAnswer == "Y"
+  puts handle.sort_by{|word|word.downcase}
+else 
+end
+
+
+
+
+
+
+
+
+
+
+
+
+

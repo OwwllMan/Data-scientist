@@ -9,10 +9,10 @@ def highestCrypto(cryptoCurrency)
   count = 0
   maxindex = 0
   cryptoCurrency.each_value do |value|
-    value.delete! "$"
-    if value.to_i > max
-      max = value.to_i
-      maxindex = count
+    value.delete! "$" #Suppression def du symbole $ de chaque value du hash cryptoCurrency
+    if value.to_i > max #Si va check chaque value et quand il va en trouver une plus grande que la précédente il va la store dans max 
+      max = value.to_i# il store la value dans max 
+      maxindex = count 
     end
     count += 1
   end
@@ -20,7 +20,7 @@ def highestCrypto(cryptoCurrency)
 end
 
 
-def lowestCrypto(cryptoCurrency)
+def lowestCrypto(cryptoCurrency)#Même utilisation que hightest 
   lowest = cryptoCurrency.values[0].to_i
   count = 0
   lowestindex = 0
@@ -38,11 +38,11 @@ end
 def coinCrypto(cryptoName)
     nbCoinCrypto = 0
     cryptoName.each do |crypto|
-        if (crypto.downcase).include?("coin")
+        if (crypto.downcase).include?("coin")#Si une valeur du tableau inclue "coin" en minuscule il incrémente
             nbCoinCrypto +=1
         end
     end 
-    return nbCoinCrypto
+    return nbCoinCrypto#return le nombre d'incrémentation effectuer sois le nb de "coin" trouvé 
 end
 
 def cryptosUnder6000(cryptoCurrency)
@@ -75,13 +75,22 @@ def highest6000Crypto(cryptoCurrency)
   return cryptoCurrency.keys[maxindex]
 end
 
-
-puts "La cryptomonnaie la plus valuée dans le tableau est #{highestCrypto(cryptoCurrency)}, avec #{cryptoCurrency[highestCrypto(cryptoCurrency)]} dollars, "
-puts "La cryptomonnaie avec le moins de valeur est #{lowestCrypto(cryptoCurrency)}, avec une valeur de #{cryptoCurrency[lowestCrypto(cryptoCurrency)]}"
+p "------------------------------------------------------------------------------------------------------------"
+puts "La cryptomonnaie la plus valuée dans le tableau est #{highestCrypto(cryptoCurrency)}, avec #{cryptoCurrency[highestCrypto(cryptoCurrency)]} dollars"
+p "------------------------------------------------------------------------------------------------------------"
+puts "La cryptomonnaie avec la moins de valuée est #{lowestCrypto(cryptoCurrency)}, avec une valeur de #{cryptoCurrency[lowestCrypto(cryptoCurrency)]} dollars"
+p "------------------------------------------------------------------------------------------------------------"
 puts "Dans toute les crypto présente il y a un total de #{coinCrypto(cryptoName)} le mot \"coin\" "
-puts "Voici la liste des cryptomonnaie en dessous de 6000$ :"
-puts "#{cryptosUnder6000(cryptoCurrency)}"
-puts "La cryptomonnaie avec la valeur la plus haute en dessous de 6000 est #{highest6000Crypto(cryptoCurrency)}"
+p "------------------------------------------------------------------------------------------------------------"
+puts "Voulez vous affichier la liste des cryptomonnaie en dessous de 6000,00$ ? (Y/N)"
+
+userAnswer = gets.chomp.upcase
+if userAnswer == "Y"
+	puts "#{cryptosUnder6000(cryptoCurrency)}"
+else
+end
+
+puts "La cryptomonnaie avec la valeur la plus haute en dessous de 6000,00$ est le #{highest6000Crypto(cryptoCurrency)}"
 
 
 

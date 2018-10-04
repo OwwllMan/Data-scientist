@@ -1,3 +1,3 @@
 # Data-scientist
 
-Réalisation avec Thomas H et Ugo G 
+Projet réalisé en collaboration avec Ugo Gessa, Ainsi que Thomas Hertzog, et moi même Mathieu Donier
